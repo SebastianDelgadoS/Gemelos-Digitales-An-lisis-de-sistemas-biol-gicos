@@ -1,5 +1,5 @@
 [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=SebastianDelgadoS/Gemelos-Digitales-Modelizado-matematico-C20212281)
-# Gemelos Digitales. Práctica 4: Modelizado matematico [DelgadoC20212281]
+# Gemelos Digitales. Práctica 5: Análisis de sistemas biológicos [DelgadoC20212281]
 
 ## Autor
 Delgado Soto Jose Sebastian
@@ -7,14 +7,15 @@ Delgado Soto Jose Sebastian
 Ingeniería Biomédica, Departamento de Ingeniería Eléctrica y Electrónica, Tecnológico Nacional de México/IT Tijuana. Blvd. Alberto Limón Padilla s/n, Tijuana, C.P. 22454, B.C., México. Email: l20212281@tectijuana.edu.mx
 
 ## Resumen de la práctica
-En esta práctica se aplicará el método de Heun para crear un algoritmo de regresión no lineal que resuelva EDO de primer orden a partir de datos experimentales. También se calcularán parámetros estadísticos clave para estimar las tasas de crecimiento 𝜌 y 𝛾. Finalmente, se obtendrá la matriz Jacobiana, los puntos de equilibrio y sus valores propios para analizar la estabilidad del sistema.
+En esta práctica se estudiará un sistema dinámico compuesto por tres ecuaciones diferenciales ordinarias (EDOs) de primer orden que modelan la interacción entre tres tipos de poblaciones celulares: células patológicas (tumorales), células sanas y células efectoras del sistema inmune (como células NK o citotóxicas). El modelo se basa en una extensión de los sistemas de Lotka-Volterra y el sistema propuesto por Itik y Banks. Se analizarán distintos comportamientos dinámicos del sistema, como ciclos límite, órbitas periódicas y caos, dependiendo de los valores del parámetro de interacción entre células patológicas y sanas. Además, se resolverá numéricamente el sistema, se identificarán puntos de equilibrio y se estudiará su estabilidad mediante análisis lineal y herramientas gráficas.
 
 ## Objetivos específicos
-1.Implementar algoritmos utilizando el método de Heun para resolver EDO basadas en datos experimentales.
-2.Representar gráficamente la curva ajustada para evaluar la precisión del modelo frente a los datos reales.
-3.Determinar los principales parámetros estadísticos del sistema.
-4.Obtener estimaciones de las tasas de crecimiento 𝜌 y 𝛾.
-5.Analizar la estabilidad del sistema mediante el cálculo de la matriz Jacobiana, los puntos de equilibrio y sus valores propios.
+1. Modelar la interacción entre tres poblaciones celulares (patológicas, sanas y efectoras) mediante un sistema de EDOs no lineales
+2. Aplicar métodos numéricos para resolver el sistema en distintos intervalos de tiempo con diferentes condiciones iniciales y valores del parámetro a12
+3. Explorar distintos regímenes dinámicos del sistema (convergencia al equilibrio, ciclos límite internos/externos, órbitas periódicas y caos) según el parámetro de bifurcación a12
+4. Calcular los puntos de equilibrio del sistema y analizar su estabilidad local mediante la matriz Jacobiana y el análisis de autovalores.
+5. Visualizar la dinámica de las poblaciones 
+
 
 ## Docente
 Dr. Paul A. Valle
@@ -26,4 +27,3 @@ Posgrado en Ciencias de la Ingeniería [PCI] y Departamento de Ingeniería Eléc
 
 [2] Dominik Wordaz & Natalia L. Komarova, Dynamics of Cancer: Mathematical Foundations of Oncology, University of California, Irvine, USA, 2014.
 
-[3] Robert A. Gatenby & Thomas L. Vincent, "Application of quantitative models from population biology and evolutionary game theory to tumor therapeutic strategies," Molecular Cancer Therapeutics, vol. 2, no. 9, pp. 919–927, Jun 2003.
