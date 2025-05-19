@@ -1,0 +1,775 @@
+
+\documentclass[letterpaper,11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,float}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{LastRevised=Monday, May 19, 2025 15:25:52}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{ComputeDefs=
+%$h_{4}=\alpha x$
+%}
+
+
+\input{tcilatex}
+\renewcommand{\baselinestretch}{1.15}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5\baselineskip}
+\pretolerance=2000 \tolerance=3000
+\renewcommand{\abstractname}{Resumen}
+
+\begin{document}
+
+\title{Analisis de sistemas biologicos}
+\author{Delgado Soto Jose Sebastian $\left[ C20212281\right] $ \\
+%EndAName
+Departamento de Ingenier\'{\i}a El\'{e}ctrica y Electr\'{o}nica\\
+Tecnol\'{o}gico Nacional de M\'{e}xico / Instituto Tecnol\'{o}gico de Tijuana%
+}
+\maketitle
+
+\noindent \textbf{Palabras clave: }\ Modelo; 3 poblaciones; Sistema;
+Tratamiento; Celulas.
+
+\noindent
+
+\noindent Correo: \textbf{l20212281@tectijuana.edu.mx}
+
+\noindent \noindent Carrera: \textbf{Ingenier\'{\i}a Biom\'{e}dica }
+
+\noindent Asignatura: \textbf{Gemelos Digitales}
+
+\noindent Profesor: \href{https://biomath.xyz/}{\textbf{Dr. Paul Antonio
+Valle Trujillo}} (paul.valle@tectijuana.edu.mx)
+
+\section{Modelo Matematico}
+
+El modelo matematico se compone por las siguientes tres Ecuaciones
+Diferenciales Ordinarias (EDOs) de primer orde:
+
+\begin{eqnarray*}
+\dot{x} &=&r_{1}x\left( 1-b_{1}x\right) -a_{12}xy-a_{13}xz, \\
+\dot{y} &=&r_{2}y\left( 1-b_{2}y\right) -a_{21}xy, \\
+\dot{z} &=&\left( r_{3}-a_{31}\right) xz-d_{3}z+\rho _{i},
+\end{eqnarray*}
+
+donde $x\left( t\right) $ es la poblacion de celulas anormales, $y\left(
+t\right) $ la poblacion de celulas normales y $z\left( t\right) $ la
+poblacion de celulas efectoras, ademas el tiempo $t$ \ \ 
+
+se mide en dias.
+
+\textbf{\bigskip\ Comentarios sobre el modelo:}
+
+\begin{enumerate}
+\item Es un sistema de ecuaciones diferenciales ordinario de primer orden
+
+\item Interacciona entre celulas anormales, normales y celulas efectoras
+
+\item En un sistema de 3 poblaciones.
+
+\item La poblacion de \ celulas anormales y normales se describe a travez de
+la ley de crecimiento logistico
+
+\item La celulas efectoras se describe mediante la accion de masas.
+
+\item Los terminos $xy$ representan la competencia de recursos entre celulas
+patologicas y sanas
+
+\item La eliminacion de celulas patologicas por celulas efectoras t
+supresion inmune es representada por el termino $xz$
+
+\item $\rho i$ representa aplicacion externa de un tratamiento de
+inmunoterapia.
+
+\item La dinamica del sistema es de la forma presa-depredador de Lotka
+Volterra
+
+\item Debido a que el sistema describe la concentracion de poblaciones
+celulares \ respecto al tiempo, sus soluciones deben ser no negativas para
+condiciones iniciales no negativas, de lo contrario se perdera el
+significado de sistema biologico
+\end{enumerate}
+
+\bigskip
+
+\bigskip En esta seccion se aplica el lema de positividad para sistemas
+dinamicos no lineales, por lo que se realizan la siguientes evaluaciones:
+
+\begin{eqnarray*}
+\left. \dot{x}\right\vert _{x=0} &=&r_{1}\left( 0\right) \left(
+1-b_{1}\left( 0\right) \right) -a_{12}\left( 0\right) y-a_{13}\left(
+0\right) z=0 \\
+\left. \dot{y}\right\vert _{y=0} &=&r_{2}\left( 0\right) \left(
+1-b_{2}\left( 0\right) \right) -a_{21}x\left( 0\right) ,=0, \\
+\left. \dot{z}\right\vert _{z=0} &=&\left( r_{3}-a_{31}\right) x\left(
+0\right) -d_{3}\left( 0\right) +\rho _{i}=\rho _{i},
+\end{eqnarray*}
+
+\bigskip
+
+Se analizaron las ecuaciones cuando las ponlaciones valen $0$, comprobando
+que el sistema no genera numeros negativos. Si las poblaciones valen 0, las
+celulas anormales y normales no tienen un crecimimiento, sin embargo las
+celulas efectoras
+
+\bigskip
+
+\bigskip Por lo tanto, de acuerdo con De leenheer \& Aeyels[1], se concluye
+el siguiente resultado
+
+\textbf{Resultado I. Positividad:} \textit{Las soluciones }$\left[ x\left(
+t\right) ,y\left( t\right) ,z\left( t\right) \right] $\textit{\ y
+semi-trayectorias positivas }$\left( \Gamma ^{+}\right) $\textit{\ del
+sistema (ref:dx)-(ref: dz) seran positivamente invariantes y para cada
+condicion inicial no negativa }$\left[ x\left( 0\right) ,y\left( 0\right)
+,z\left( 0\right) \geq 0\right] $\textit{\ se localizaran en el siguiente
+dominio:}
+
+\begin{equation*}
+R_{0}^{3}=\{x\left( t\right) ,y\left( t\right) ,z\left( t\right) \geq 0\}
+\end{equation*}
+
+\bigskip
+
+\bigskip
+
+\bigskip
+
+\textbf{Referencia:}
+
+\begin{itemize}
+\item 
+\begin{description}
+\item De Leenher, P., \& Aeyels, D. (2001). Stability properties of
+equilibria of classes of cooperative systems.IEEE Transactions on Automatic
+Control,46(12), 1996-2001. https://doi.org/ 10.1109/9.975508\newline
+\end{description}
+\end{itemize}
+
+\bigskip
+
+\bigskip
+
+\subsection{Localizacion de conjuntos compactos invariantes}
+
+Primero, se debe de proponer una funcion localizadora, para sistemas
+biologicos con dinamica localizada en el ortante no negativo, se sugiere
+explorar las siguientes funciones
+
+\begin{eqnarray*}
+h_{1} &=&x, \\
+h_{2} &=&y, \\
+h_{3} &=&z, \\
+h_{4} &=&x+y+z, \\
+h_{5} &=&x+z \\
+h_{6} &=&x,+y \\
+h_{7} &=&y+z
+\end{eqnarray*}
+
+\bigskip
+
+Nota: Con base en la estructura del sistema, se observa que las variables $%
+x(t)$y $y(t)$, tienen los siguientes limites inferiores y superiores.
+
+\bigskip
+
+\begin{eqnarray*}
+0 &\preceq &x\left( t\right) \preceq 1 \\
+0 &\preceq &x\left( t\right) \preceq 1
+\end{eqnarray*}
+
+\bigskip
+
+Esto corresponde con la ley de crecimiento logistico(crecimiento de tipo
+sigmoidal), que tiende a cero al menos infinito y a uno hacia el infinito.
+
+Se explota la siguiente funcion localizadora:
+
+\begin{equation*}
+h_{1}=x,
+\end{equation*}
+
+\bigskip
+
+y se calcula su derivada de Lie(derivada temporal o derivada implicita con
+respecto al tiempo):
+
+\bigskip
+
+\begin{equation*}
+L_{f}h_{1}=\frac{dx}{dt}=\dot{x}=r_{1}x\left( 1-b_{1}x\right)
+-a_{12}xy-a_{13}xz,
+\end{equation*}
+
+con lo cual, se formula el conjunto $S\left( h_{1}\right) =\{L_{f}h_{1}=0\}$%
+, es decir,
+
+\bigskip
+
+\begin{equation*}
+S\left( h_{1}\right) =\{r_{1}x\left( 1-b_{1}x\right) -a_{12}xy-a_{13}xz=0\}
+\end{equation*}
+
+se observa que este conjunto puede reescribirse de la siguiente forma:
+
+\bigskip
+
+\begin{equation*}
+S\left( h_{1}\right) =\{r_{1}x\left( 1-b_{1}x\right)
+-a_{12}xy-a_{13}xz=0\}\cup \{x=0\},
+\end{equation*}
+
+\bigskip
+
+ahora, se reescribe la primera parte del conjunto, despejando la variable de
+interes:
+
+\begin{equation*}
+S\left( h_{1}\right) =\{x=\frac{1}{b_{1}}-\frac{a_{12}}{r_{1}b_{1}}y-\frac{%
+a_{13}}{r_{1}b_{1}}x\}\cup \{x=0\},
+\end{equation*}
+
+\bigskip
+
+con base en los anterior se concluye lo siguiente:
+
+\bigskip 
+\begin{equation*}
+K\left( h_{1}\right) =\{x_{\inf }=0\preceq x_{\max }=\frac{1}{b_{1}}\},
+\end{equation*}
+
+\bigskip
+
+es decir, el valor minimo que puede tener la solucion $x(t)$ $\ $es de cero,
+mientras que, el valor maximo que puede alcanzar esta solucion cuando $y=z=0$%
+, es de uno (recordado que el sistema esta normalizado).
+
+\bigskip
+
+\bigskip \textbf{Para y}
+
+Se explota la siguiente funcion localizadora:
+
+\begin{equation*}
+h_{2}=y,
+\end{equation*}
+
+\bigskip y se calcula su deribada derivada de Lie:
+
+\begin{equation*}
+L_{f}h_{2}=r_{2}y\left( 1-b_{2}y\right) -a_{21}xy,
+\end{equation*}
+
+Entonces, el conjunto $S\left( h_{2}\right) =\{L_{f}h_{2}=0\}$,esta dado por
+lo siguiente
+
+\begin{equation*}
+S\left( h_{2}\right) =\{y=\frac{1}{b_{2}}-\frac{a_{12}}{r_{2}b_{2}}y-\frac{%
+a_{13}}{r_{2}b_{2}}x\}\cup \{y=0\}
+\end{equation*}
+
+\bigskip
+
+con base a lo anterior , se concluye el siguiente resultado:
+
+\bigskip
+
+\begin{equation*}
+K\left( h_{2}\right) =\{y_{\inf }=0\preceq y_{\sup }=\frac{1}{b_{2}}\},
+\end{equation*}
+
+\bigskip
+
+\bigskip Se explota la siguiente funcion localizadora:
+
+\begin{equation*}
+h_{3}=z,
+\end{equation*}
+
+\bigskip
+
+al calcular su derivada de Lie
+
+\bigskip
+
+\begin{equation*}
+L_{f}h_{3}=\left( r_{3}-a_{31}\right) xz-d_{3}z+\rho _{i},
+\end{equation*}
+
+Entonces, el conjunto $S\left( h_{3}\right) $,esta dado por lo siguiente
+
+\bigskip 
+\begin{equation*}
+S\left( h_{3}\right) =\{L_{f}h_{3}=0\}=\{\left( r_{3}-a_{31}\right)
+xz-d_{3}z+\rho _{i}=0\},
+\end{equation*}
+
+\bigskip
+
+donde, al observar los valores de los parametros, se construte la siguiente
+condicion:
+
+\begin{equation*}
+r_{3}>a_{31}
+\end{equation*}
+
+\bigskip
+
+por lo tanto, se reescribe el conjunto $S\left( h_{3}\right) $ de la
+siguiente forma:
+
+\bigskip
+
+\begin{equation*}
+S\left( h_{3}\right) =\{z=\frac{\rho _{i}}{d_{3}}-\frac{r_{3}-a_{13}}{d_{3}}%
+xz\},
+\end{equation*}
+
+\bigskip
+
+por lo tanto, se observa que, la solucion tiene el siguiente limite inferior:
+
+\bigskip
+
+\begin{equation*}
+K\left( z\right) =\{z\left( t\right) \geq z_{\inf }\frac{\rho _{i}}{d_{3}}\}
+\end{equation*}
+
+\bigskip
+
+recordando que $p_{i}$ es el parametro de tratamiento / terapia (o parametro
+de control), que puede tener valores no negativos, es decir $pi\geq 0.$
+
+\bigskip
+
+por lo tanto, con base en el reusltado anterior, se procede a aplicar el
+denominado Teorema Iterativo del metodo de LCCI , entonces, se reescribe el
+conjunto $S\left( h_{1}\right) $ como se muestra a continuacion:
+
+\bigskip
+
+\begin{eqnarray*}
+S\left( h_{1}\right) &=&\{r_{1}x\left( 1-b_{1}x\right)
+-a_{12}xy-a_{13}xz=0\}\cup \{x=0\},\text{(esto no se escribe de manera
+formal)} \\
+S\left( h_{1}\right) \cap K\left( z\right) &\subset &\{x=\frac{1}{b_{1}}-%
+\frac{a_{12}}{r_{1}b_{1}}y-\frac{a_{13}}{r_{1}b_{1}}z_{\inf }\}
+\end{eqnarray*}
+
+\bigskip
+
+ahora, al descartar el termino negativo de $y,$se concluye el siguiente
+limite superior para la variable $x\left( t\right) $:
+
+\bigskip
+
+\begin{equation*}
+K_{x}=\{x_{\inf }=0\leq x(t)\leq x_{\sup }=\frac{1}{b_{1}}-\frac{a_{13}}{%
+r_{1}b_{1}d_{3}}pi
+\end{equation*}
+
+\bigskip
+
+Finalmente, se toma la siguiente funcion localizadora:
+
+\begin{equation*}
+h_{4}=\alpha x+z,
+\end{equation*}
+
+\bigskip
+
+\bigskip cuya derivada de Lie se muestra a continuacion:
+
+\bigskip
+
+\begin{equation*}
+L_{f}h_{4}=\alpha \left[ r_{1}x\left( 1-b_{1}x\right) -a_{12}xy-a_{13}xz%
+\right] +(r_{3}-a_{31})xz-d_{3}z+pi
+\end{equation*}
+
+\bigskip
+
+se determina el conjunto $S\left( h_{4}\right) =\{L_{f}h_{4}=0\}$ de la
+siguiente forma:
+
+\begin{eqnarray*}
+S\left( h_{4}\right) &=&\{\alpha r_{1}x-b_{1}\alpha r_{1}x^{2}-\alpha
+a_{12}xy-\alpha _{13}xz+\left( r_{3}-a_{31}\right) xz-d_{3}z+pi=0\}, \\
+S\left( h_{4}\right) &=&\{pi-b_{1}\alpha r_{1}x^{2}+ar_{1}x-\alpha
+a_{12}xy-(\alpha a_{13}-r_{3}+a_{31})xz+\left( r_{3}-a_{31}\right)
+xz-d_{3}z=0
+\end{eqnarray*}
+
+\bigskip
+
+\bigskip
+
+para asegurar que todos los terminos cruzados/ no lineales/cuadrativos, sean
+negativos, se impone la siguiente condicion
+
+\bigskip
+
+\bigskip 
+\begin{eqnarray*}
+\alpha a_{13}-r_{3}+a_{31} &>&0 \\
+\alpha &>&\frac{r_{3-}a_{31}}{a_{13}}
+\end{eqnarray*}
+
+\bigskip
+
+ahora, la funcion localizaodra se puede expresar de esta forma:
+
+\begin{equation*}
+z=h_{4}-\alpha x,
+\end{equation*}
+
+\bigskip para sustituir en la siguiente expresion:
+
+\begin{equation*}
+S\left( h_{4}\right) =\left\{ d_{3}z=\rho _{i}-b_{1}\alpha r_{1}x^{2}+\alpha
+r_{1}x-\alpha a_{12}xy-\left( \alpha a_{13}-r_{3}+a_{31}\right) xz\right\} ,
+\end{equation*}%
+es decir,
+
+\begin{eqnarray*}
+S\left( h_{4}\right) &=&\left\{ d_{3}\left( h_{4}-\alpha x\right) =\rho
+_{i}-b_{1}\alpha r_{1}x^{2}+\alpha r_{1}x-\alpha a_{12}xy-\left( \alpha
+a_{13}-r_{3}+a_{31}\right) xz\right\} , \\
+S\left( h_{4}\right) &=&\left\{ d_{3}h_{4}=\rho _{i}-b_{1}\alpha
+r_{1}x^{2}+\left( \alpha r_{1}+d_{3}\alpha \right) x-\alpha a_{12}xy-\left(
+\alpha a_{13}-r_{3}+a_{31}\right) xz\right\} , \\
+S\left( h_{4}\right) &=&\left\{ h_{4}=\frac{\rho _{i}}{d_{3}}-\frac{%
+b_{1}\alpha r_{1}}{d_{3}}x^{2}+\frac{\alpha r_{1}+d_{3}\alpha }{d_{3}}x-%
+\frac{\alpha a_{12}}{d_{3}}xy-\frac{\alpha a_{13}-r_{3}+a_{31}}{d_{3}}%
+xz\right\} ,
+\end{eqnarray*}%
+para continuar con el proceso, primero se debe completar el cuadrado con los
+siguientes dos terminos:
+
+\begin{equation*}
+-\frac{b_{1}\alpha r_{1}}{d_{3}}x^{2}+\frac{\alpha r_{1}+d_{3}\alpha }{d_{3}}%
+x=-Ax^{2}+Bx=-A\left( x-\frac{B}{2A}\right) ^{2}+\frac{B^{2}}{4A}
+\end{equation*}%
+y se sustituye en el conjunto $S\left( h_{4}\right) $
+
+\begin{equation*}
+S\left( h_{4}\right) =\left\{ h_{4}=\frac{\rho _{i}}{d_{3}}+\frac{B^{2}}{4A}%
+-A\left( x-\frac{B}{2A}\right) ^{2}-\frac{\alpha a_{12}}{d_{3}}xy-\frac{%
+\alpha a_{13}-r_{3}+a_{31}}{d_{3}}xz\right\} ,
+\end{equation*}%
+por lo tanto, se concluye el siguiente limite superior para la funcion $%
+h_{4} $:
+
+\begin{equation*}
+K\left( h_{4}\right) =\left\{ ax\left( t\right) +z\left( t\right) \leq \frac{%
+\rho _{i}}{d_{3}}+\frac{\alpha \left( d_{3}+r_{1}\right) ^{2}}{%
+4b_{1}d_{3}r_{1}}\right\} ,
+\end{equation*}%
+y se aproxima el siguiente limite superior para la variable $z\left(
+t\right) $:
+
+\begin{equation*}
+K_{z}=\left\{ z_{\inf }=\frac{\rho _{i}}{d_{3}}\leq z\left( t\right) \leq
+z_{\sup }=\frac{\rho _{i}}{d_{3}}+\frac{\alpha \left( d_{3}+r_{1}\right) ^{2}%
+}{4b_{1}d_{3}r_{1}}\right\} .
+\end{equation*}
+
+Con base en lo mostrado en esta seccion, se concluye el siguiente resultado:
+
+\bigskip
+
+\textbf{Resultado II: Dominio de localizacion}\textit{: Todos los conjuntos
+compactos invariantes del sistema }$\left( \ref{dx}\right) -\left( \ref{dz}%
+\right) $\textit{\ se encuentran localizados dentro o en las fronteras del
+siguiente dominio de localizacion:}
+
+\bigskip 
+\begin{equation*}
+K_{xyz}=K_{x}\cap K_{y}\cap K_{z},
+\end{equation*}%
+\textit{donde}
+
+\bigskip 
+\begin{eqnarray*}
+K_{x} &=&\left\{ x_{\inf }=0\leq x\left( t\right) \leq x_{\sup }=\frac{1}{%
+b_{1}}-\frac{a_{13}}{r_{1}b_{1}d_{3}}\rho _{i}\right\} , \\
+K_{y} &=&\left\{ y_{\inf }=0\leq y\left( t\right) \leq y_{\sup }=\frac{1}{%
+b_{2}}\right\} , \\
+K_{z} &=&\left\{ z_{\inf }=\frac{\rho _{i}}{d_{3}}\leq z\left( t\right) \leq
+z_{\sup }=\frac{\rho _{i}}{d_{3}}+\frac{\alpha \left( d_{3}+r_{1}\right) ^{2}%
+}{4b_{1}d_{3}r_{1}}\right\} .
+\end{eqnarray*}
+
+\bigskip
+
+\bigskip
+
+\subsection{No existencia de conjuntos compactos invariables}
+
+\bigskip
+
+A partir del resultado mostrado en el conjunto en el conjunto $Kx$, es
+posible establecer lo siguiente con respecto a la existencia de conjuntos
+compactos invariantes para la variables $x(t):$
+
+\bigskip
+
+\textbf{Resultado III: No existencia. }\textit{Si la siguiente condicion
+sobre el parametro de tratamiento /terapia se cumple:}
+
+\bigskip
+
+\begin{equation*}
+\frac{1}{b_{1}}-\frac{a_{13}}{r_{1}b_{1}d_{3}}pi\preceq 0,
+\end{equation*}
+
+es decir,
+
+\bigskip
+
+\begin{equation*}
+pi\geq \frac{r_{1}d_{3}}{a_{13}},
+\end{equation*}
+
+entonces, se puede asegurar la no existencia de conjuntos compactos
+invariantes fuera \ del plano $x=o$, por lo tanto, cualquier dinamica que
+pueda exhibir el sistema, estara localizada dentro o fuera
+
+\bigskip 
+\begin{equation*}
+K_{xyz}=\left\{ x=0\right\} \cap K_{y}\cap K_{z},
+\end{equation*}
+
+\bigskip
+
+\subsection{Puntos de equilibrio}
+
+\bigskip
+
+Para calcular los puntos de equilibrio del sistema(ref:x)- (ref: dz), se
+igualan a cero de las ecuaciones como se muestra a continuacion
+
+\bigskip
+
+$\func{assume}\left( r_{1},\func{positive}\right) =\allowbreak \left(
+0,\infty \right) $
+
+$\func{assume}\left( b_{1},\func{positive}\right) =\allowbreak \left(
+0,\infty \right) $
+
+$\func{assume}\left( a_{12},\func{positive}\right) =\allowbreak \left(
+0,\infty \right) $
+
+$\func{assume}\left( a_{13},\func{positive}\right) =\allowbreak \left(
+0,\infty \right) $
+
+$\func{assume}\left( r_{2},\func{positive}\right) =\allowbreak \left(
+0,\infty \right) $
+
+$\func{assume}\left( a_{21},\func{positive}\right) =\allowbreak \left(
+0,\infty \right) $
+
+$\func{assume}\left( r_{3},\func{positive}\right) =\allowbreak \left(
+0,\infty \right) $
+
+$\func{assume}\left( a_{31},\func{positive}\right) =\allowbreak \left(
+0,\infty \right) $
+
+$\func{assume}\left( d_{3},\func{positive}\right) =\allowbreak \left(
+0,\infty \right) $
+
+\bigskip primero, se calculan los equilibrios asumiendo $\rho i=0:$%
+\begin{eqnarray*}
+0 &=&r_{1}\left( 1-b_{1}x\right) -a_{12}xy-a_{13}xz \\
+0 &=&r_{2}y\left( 1-b_{2}y\right) -a_{21}xy \\
+0 &=&\left( r_{3}-a_{31}\right) xz-d_{3}z
+\end{eqnarray*}
+
+$\bigskip $
+
+$\bigskip $%
+\begin{eqnarray*}
+&&\left[ x=\frac{d_{3}}{r_{3}-a_{31}},y=0,z=-\frac{1}{%
+r_{3}a_{13}-a_{13}a_{31}}\left(
+-r_{1}r_{3}+r_{1}a_{31}+b_{1}d_{3}r_{1}\right) \right] \\
+&&\left[ x=\frac{d_{3}}{r_{3}-a_{31}},y=-\frac{1}{%
+b_{2}r_{2}r_{3}-b_{2}r_{2}a_{31}}\left(
+d_{3}a_{21}-r_{2}r_{3}+r_{2}a_{31}\right) ,z=\frac{1}{%
+b_{2}r_{2}r_{3}a_{13}-b_{2}r_{2}a_{13}a_{31}}\left(
+d_{3}a_{12}a_{21}-r_{2}r_{3}a_{12}+r_{2}a_{12}a_{31}+b_{2}r_{1}r_{2}r_{3}-b_{2}r_{1}r_{2}a_{31}-b_{1}b_{2}d_{3}r_{1}r_{2}\right) %
+\right] \\
+&&\left[ x=\frac{1}{a_{21}}\left( r_{2}-b_{2}r_{2}\frac{%
+r_{1}a_{21}-b_{1}r_{1}r_{2}}{a_{12}a_{21}-b_{1}b_{2}r_{1}r_{2}}\right) ,y=%
+\frac{r_{1}a_{21}-b_{1}r_{1}r_{2}}{a_{12}a_{21}-b_{1}b_{2}r_{1}r_{2}},z=0%
+\right] \\
+&&\left[ x=0,y=\frac{1}{b_{2}},z=0\right]
+\end{eqnarray*}
+
+\bigskip $\func{assume}\left( \rho _{i},\func{positive}\right) =\allowbreak
+\left( 0,\infty \right) $
+
+Ahora, considerando $\rho _{i}>0:$
+
+\begin{eqnarray*}
+0 &=&r_{1}x(1-b_{1}x)-a_{12}xy-a_{13}xz \\
+0 &=&r_{2}y(1-b_{2}y)-a_{21}xy \\
+0 &=&(r_{3}-a_{31})xz-d_{3}z
+\end{eqnarray*}%
+, Solution is: $\left\{ 
+\begin{array}{ccc}
+\left\{ \left[ y=0,z=0\right] ,\left[ x=\frac{d_{3}}{r_{3}-a_{31}},y=0,z=-%
+\frac{1}{r_{3}a_{13}-a_{13}a_{31}}\left(
+-r_{1}r_{3}+r_{1}a_{31}+b_{1}d_{3}r_{1}\right) \right] ,\left[ x=\frac{d_{3}%
+}{r_{3}-a_{31}},y=-\frac{1}{b_{2}r_{2}r_{3}-b_{2}r_{2}a_{31}}\left(
+d_{3}a_{21}-r_{2}r_{3}+r_{2}a_{31}\right) ,z=\frac{1}{%
+b_{2}r_{2}r_{3}a_{13}-b_{2}r_{2}a_{13}a_{31}}\left(
+d_{3}a_{12}a_{21}-r_{2}r_{3}a_{12}+r_{2}a_{12}a_{31}+b_{2}r_{1}r_{2}r_{3}-b_{2}r_{1}r_{2}a_{31}-b_{1}b_{2}d_{3}r_{1}r_{2}\right) %
+\right] ,\left[ x=\frac{1}{a_{21}}\left( r_{2}-b_{2}r_{2}\frac{%
+r_{1}a_{21}-b_{1}r_{1}r_{2}}{a_{12}a_{21}-b_{1}b_{2}r_{1}r_{2}}\right) ,y=%
+\frac{r_{1}a_{21}-b_{1}r_{1}r_{2}}{a_{12}a_{21}-b_{1}b_{2}r_{1}r_{2}},z=0%
+\right] ,\left[ x=0,y=\frac{1}{b_{2}},z=0\right] \right\} & \text{if} & 
+b_{2}\neq 0\wedge -r_{3}+a_{31}\neq 0\wedge b_{2}^{2}\frac{r_{2}^{2}}{%
+a_{21}^{2}}-\frac{1}{b_{1}}\frac{b_{2}}{r_{1}}r_{2}\frac{a_{12}}{a_{21}}\neq
+0\wedge \frac{r_{1}a_{21}-b_{1}r_{1}r_{2}}{a_{12}a_{21}-b_{1}b_{2}r_{1}r_{2}}%
+\neq 0 \\ 
+\left\{ \left[ y=0,z=0\right] ,\left[ x=\frac{d_{3}}{r_{3}-a_{31}},y=0,z=-%
+\frac{1}{r_{3}a_{13}-a_{13}a_{31}}\left(
+-r_{1}r_{3}+r_{1}a_{31}+b_{1}d_{3}r_{1}\right) \right] ,\left[ x=\frac{d_{3}%
+}{r_{3}-a_{31}},y=-\frac{1}{b_{2}r_{2}r_{3}-b_{2}r_{2}a_{31}}\left(
+d_{3}a_{21}-r_{2}r_{3}+r_{2}a_{31}\right) ,z=\frac{1}{%
+b_{2}r_{2}r_{3}a_{13}-b_{2}r_{2}a_{13}a_{31}}\left(
+d_{3}a_{12}a_{21}-r_{2}r_{3}a_{12}+r_{2}a_{12}a_{31}+b_{2}r_{1}r_{2}r_{3}-b_{2}r_{1}r_{2}a_{31}-b_{1}b_{2}d_{3}r_{1}r_{2}\right) %
+\right] ,\left[ x=0,y=\frac{1}{b_{2}},z=0\right] \right\} & \text{if} & 
+b_{2}\neq 0\wedge -r_{3}+a_{31}\neq 0\wedge b_{2}^{2}\frac{r_{2}^{2}}{%
+a_{21}^{2}}-\frac{1}{b_{1}}\frac{b_{2}}{r_{1}}r_{2}\frac{a_{12}}{a_{21}}\neq
+0\wedge \frac{r_{1}a_{21}-b_{1}r_{1}r_{2}}{a_{12}a_{21}-b_{1}b_{2}r_{1}r_{2}}%
+=0%
+\end{array}%
+\right. \allowbreak $
+
+\bigskip
+
+\bigskip
+
+\begin{eqnarray*}
+\dot{x} &=&r_{1}x(1-b_{1}x)-a_{12}xy-a_{13}xz, \\
+\dot{y} &=&r_{2}y(1-b_{2}y)-a_{21}xy, \\
+\dot{z} &=&(r_{3}-a_{31})xz-d_{3}z+\rho _{i},
+\end{eqnarray*}
+
+$\allowbreak $
+
+\subsection{\protect\bigskip Condiciones de eliminacion}
+
+\bigskip
+
+Las condiciones de eliminacion se establecen sobre el parametro de
+tratamiento/terapia o control y se determinan al aplicar la teoria de
+estabilidad en el sentido de Lyanpunov, particularmente el metodo directo de
+Lyapunov.
+
+\bigskip
+
+Se propone la siguiente funcion candidata de Lyapunov:
+
+\bigskip
+
+\begin{equation*}
+V=x,
+\end{equation*}
+
+\bigskip
+
+y se calcula su derivada
+
+\bigskip
+
+\begin{equation*}
+V=\dot{x}=r_{1}x(1-b_{1}x)-a_{12}xy-a_{13}xz
+\end{equation*}
+
+\bigskip
+
+y se reescribe la derivada de la siguiente forma
+
+\bigskip
+
+\begin{equation*}
+V=\left( r_{1}-r_{1}b_{1}x-a_{12}-a_{13}z\right) x
+\end{equation*}
+
+\bigskip
+
+ahora, al considerar los resultados del dominio de localizacion y evaluar la
+derivada de este, es decir,
+
+\bigskip
+
+\begin{equation*}
+\left. V\right\vert _{Kxyz}
+\end{equation*}
+
+\bigskip
+
+se tiene lo siguiente:
+
+\bigskip
+
+\begin{equation*}
+V=\left( r_{1}-a_{13}z_{\inf }\right) x\leq 0
+\end{equation*}
+
+a partir de esta expresion, se establece la siguiente condicion
+
+\bigskip
+
+\begin{equation*}
+-a_{13}\frac{\rho i}{d_{3}}<0
+\end{equation*}
+
+\bigskip
+
+por lo tanto, se despeja el parametro de tratamiento/terapia o control:
+
+\bigskip
+
+\begin{equation*}
+\rho i>\frac{d_{3}r_{1}}{a_{13}}
+\end{equation*}
+
+\bigskip
+
+y se establece el siguiente resultado
+
+\bigskip
+
+\textbf{Resultado IV: Condiciones de eliminacion.} Si la siguiente condicion
+se cumple:
+
+\bigskip
+
+\begin{equation*}
+\rho i>\frac{d_{3}r_{1}}{a_{13}}
+\end{equation*}
+
+\bigskip
+
+\textit{entonces, se puede asegurar la eliminacion de la ponlacion descrita
+por la variable }$x\left( t\right) $\textit{, es decir,}
+
+\bigskip
+
+\begin{equation*}
+\lim_{t\rightarrow \infty }x\left( t\right) =0
+\end{equation*}
+
+\end{document}
