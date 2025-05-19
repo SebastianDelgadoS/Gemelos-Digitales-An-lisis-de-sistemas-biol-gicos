@@ -1,4 +1,4 @@
-[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=SebastianDelgadoS/Gemelos-Digitales-Modelizado-matematico-C20212281)
+[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=SebastianDelgadoS/Gemelos-Digitales-Analisis-de-sistemas-biologicos)
 # Gemelos Digitales. Práctica 5: Análisis de sistemas biológicos [DelgadoC20212281]
 
 ## Autor
